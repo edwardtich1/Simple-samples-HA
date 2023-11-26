@@ -25,5 +25,16 @@
             border-radius: 50%;
           }        
 ```
-
+Размеры карты
+```yaml
+       card_mod:
+             style: |
+               :host {
+                 --mush-icon-size: 60px;
+                 height: 49px;
+                 margin-left: -20px !important;
+                 --card-primary-font-size: 20px !important;
+               }
+```
+        
 
