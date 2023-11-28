@@ -38,7 +38,7 @@ data:
     {% set humidity = state_attr('weather.prognoz', 'humidity') %} 
     {% set windspeed = state_attr('weather.prognoz', 'wind_speed') %} 
     {% set rain = state_attr('weather.prognoz', 'forecast').0.precipitation_probability %} {% if state == 'partlycloudy' %}
-    {% set state = 'Пасмурно' %}
+    {% set state = 'Пасмурная' %}
     {% endif %} Доброе утро! Похоже, сегодня погода будет
     {{state}}, температура {{temperature}}, влажность
     {{humidity}}%, скорость ветра {{windspeed}} метров в секунду и
