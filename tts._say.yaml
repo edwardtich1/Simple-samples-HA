@@ -35,7 +35,7 @@ data:
   media_content_id: >
     {% set state = states('weather.prognoz') %} 
     {% set temperature = states('sensor.pogoda_ulitsa_temperature') |round|format(morph='градус') %} 
-    {% set humidity = state_attr('weather.prognoz', 'humidity') %} 
+    {% set humidity = states('sensor.pogoda_ulitsa_humidity') %} 
     {% set windspeed = state_attr('weather.prognoz', 'wind_speed') %} 
     {% set rain = state_attr('weather.prognoz', 'forecast').0.precipitation_probability %} {% if state == 'partlycloudy' %}
     {% set state = 'Пасмурная' %}
