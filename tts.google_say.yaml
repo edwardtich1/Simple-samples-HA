@@ -34,13 +34,13 @@ target:
 data:
   media_content_id: >
     {% set state = states('weather.prognoz') %} 
-    {% set temperature = state_attr('weather.prognoz', 'temperature') %} 
+    {% set temperature = states('sensor.pogoda_ulitsa_temperature') |round|format(morph='градус') %} 
     {% set humidity = state_attr('weather.prognoz', 'humidity') %} 
     {% set windspeed = state_attr('weather.prognoz', 'wind_speed') %} 
     {% set rain = state_attr('weather.prognoz', 'forecast').0.precipitation_probability %} {% if state == 'partlycloudy' %}
     {% set state = 'Пасмурно' %}
     {% endif %} Доброе утро! Похоже, сегодня погода будет
-    {{state}}, температура {{temperature}} градусов, влажность
+    {{state}}, температура {{temperature}}, влажность
     {{humidity}}%, скорость ветра {{windspeed}} метров в секунду и
     {{rain}}% вероятность дождя. Хорошего дня!
   media_content_type: dialog #dialog
