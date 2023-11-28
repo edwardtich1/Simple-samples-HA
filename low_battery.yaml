@@ -1,3 +1,19 @@
+### Card
+
+- type: custom:mushroom-number-card
+  entity: input_number.sensor_battery_level
+  fill_container: true
+  display_mode: slider
+  icon_color: red
+  card_mod:
+    style: |
+      :host {
+        --mush-icon-size: 40px;
+        --card-primary-font-size: 20px !important;
+        --card-secondary-font-size: 20px !important;
+      }
+
+### Packages
 low_battery:
 
   input_number:
