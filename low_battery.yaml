@@ -1,0 +1,62 @@
+low_battery:
+
+  input_number:
+
+    sensor_battery_level:
+      name: "Установка уровня батареи"
+      icon: mdi:battery-20
+      unit_of_measurement: "%"
+      initial: 20
+      min: 0
+      max: 100
+      step: 5
+
+  sensor:
+
+    - platform: template
+      sensors:
+        low_battery_devices:
+          friendly_name: Устройства с низким зарядом батареи
+          icon_template: >
+            mdi:battery-alert
+          value_template: >  
+            {% set threshold = states('input_number.sensor_battery_level')  %}
+            {%- set item = namespace(sensors=[]) -%}
+            {%- for state in states.sensor
+              | selectattr('attributes.device_class', 'defined')
+              | selectattr('attributes.state_class', 'defined')
+              | selectattr('attributes.device_class', '==', 'battery')
+              | selectattr('attributes.state_class', '==', 'measurement')
+              | selectattr('state', 'is_number') -%}
+              {%- if state.state | int < threshold | int -%}
+                {% set item.sensors = item.sensors + [dict(name = state.name | replace(' battery', '') | replace('Battery', ''), state = state.state | int)] %}
+              {%- endif -%}
+            {%- endfor -%}
+            {%- set batt = item.sensors | sort(attribute='state') %} 
+            {%- set item = namespace(batt='') -%}
+            {%- for state in batt -%}
+              {% set item.batt= item.batt + (state.name ~ ' (' ~ state.state ~ '%)' ~ "\n") %}
+            {%- endfor -%}
+            {% if item.batt | count > 0 %}
+              {{item.batt | truncate(255, true, '...')}}
+            {% else %}
+              {{'No device'}}
+            {% endif %}
+
+  automation:
+
+    - alias: "Low Battery Alert"
+      mode: single
+      trigger:
+        - platform: state
+          entity_id:
+            - sensor.low_battery_devices
+          from: No device
+          to: null
+      condition: []
+      action:
+        - service: notify.telegram
+          data_template:
+            title: "*Внимание, низкий заряд батареи!*"
+            message: >-
+              {{states('sensor.low_battery_device')}}
