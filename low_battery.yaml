@@ -75,4 +75,4 @@ low_battery:
           data_template:
             title: "*Внимание, низкий заряд батареи!*"
             message: >-
-              {{states('sensor.low_battery_device')}}
+              {{states('sensor.low_battery_devices')}}
