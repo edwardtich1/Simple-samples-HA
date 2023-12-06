@@ -1,0 +1,85 @@
+### input_number
+tabs_number:
+  name: Вкладки
+  min: 1
+  max: 3   
+  step: 1
+
+### Card
+type: vertical-stack
+cards:
+  - type: custom:mushroom-chips-card
+    chips:
+      - type: template
+        tap_action:
+          action: call-service
+          service: input_number.set_value
+          target:
+            entity_id: input_number.tabs_number
+          data:
+            value: 1
+        icon: mdi:ampersand
+        icon_color: black
+        card_mod:
+          style: |
+            ha-card {
+              --chip-background: {{ 'cyan' if is_state('input_number.tabs_number', '1.0') else 'grey' }}
+            }  
+      - type: template
+        tap_action:
+          action: call-service
+          service: input_number.set_value
+          target:
+            entity_id: input_number.tabs_number
+          data:
+            value: 2
+        icon: mdi:map-legend
+        icon_color: black        
+        card_mod:
+          style: |
+            ha-card {
+              --chip-background: {{ 'cyan' if is_state('input_number.tabs_number', '2.0') else 'grey' }}
+            }  
+      - type: template
+        tap_action:
+          action: call-service
+          service: input_number.set_value
+          target:
+            entity_id: input_number.tabs_number
+          data:
+            value: 3
+        icon: mdi:map-marker-question
+        icon_color: black
+        card_mod:
+          style: |
+            ha-card {
+              --chip-background: {{ 'cyan' if is_state('input_number.tabs_number', '3.0') else 'grey' }}
+            }  
+  - type: conditional
+    conditions:
+      - condition: state
+        entity: input_number.tabs_number
+        state: '1.0'
+    card:
+      type: entities
+      entities:
+        - sensor.date
+  - type: conditional
+    conditions:
+      - condition: state
+        entity: input_number.tabs_number
+        state: '2.0'
+    card:
+      type: entities
+      entities:
+        - sensor.time
+  - type: conditional
+    conditions:
+      - condition: state
+        entity: input_number.tabs_number
+        state: '3.0'
+    card:
+      type: entities
+      entities:
+        - sensor.date
+        - sensor.time
