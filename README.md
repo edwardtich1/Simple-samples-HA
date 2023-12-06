@@ -11,4 +11,5 @@ https://github.com/edwardtich1/Simple-samples-HA/blob/main/Mushroom-Cards-simple
 https://github.com/edwardtich1/Simple-samples-HA/blob/main/low_battery.yaml
 
 ### Карта со вкладками
+https://github.com/edwardtich1/Simple-samples-HA/blob/main/tab_card.yaml
 
