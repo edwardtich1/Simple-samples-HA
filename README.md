@@ -10,3 +10,5 @@ https://github.com/edwardtich1/Simple-samples-HA/blob/main/Mushroom-Cards-simple
 ### Оповещение о низком (установленном) заряде батареи
 https://github.com/edwardtich1/Simple-samples-HA/blob/main/low_battery.yaml
 
+### Карта со вкладками
+
