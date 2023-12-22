@@ -1,3 +1,18 @@
+### Примеры оформления
+
+      - type: custom:mushroom-template-card
+        primary: []
+        secondary: []
+        icon: mdi:kettle
+        icon_color: cyan
+        tap_action:
+          action: navigate
+          navigation_path: /lovelace/lounge
+        fill_container: false
+        multiline_secondary: false
+        badge_icon: ''
+        badge_color: ''
+
         secondary: >-
           {{ '{0:.0f}'.format(
           (state_attr('sensor.termometr_kukhnia_temperature','temperature')|float))}}°C
