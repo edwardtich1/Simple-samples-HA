@@ -17,13 +17,46 @@ card_mod:
      font-size: 10px;
      font-weight: 500;
      color: white;
+
+     ha-card {
+       padding-bottom: 20px !important;
+       --card-primary-font-size: 14px;
+       --card-secondary-font-size: 12px;
+     }
+     mushroom-shape-icon {
+       position: absolute;
+       top: -53px;
+       left: -40px;
+       }
+     ha-icon {
+      --icon-animation: rotation 1s linear infinite;
+     }
+     @keyframes rotation {
+       100% {
+         transform: rotate(360deg);
+       }            
+     }
+     mushroom-state-info {
+       padding-left: 50px;
+       padding-top: 10px;
+       z-index: 1;
+     }
+     :host {
+       --mush-icon-size: 2.8em;
+       --mush-icon-symbol-size: 1.0em          
+     }
+
      {% if states(config.entity) == 'on' %}
        background-color: #ffa500 !important; 
      {% else %}
        background-color: #808080 !important; 
      {% endif %}
      border-radius: 50%;
-   }        
+   }
+
+
+
+    
 ```
 Размеры карты
 ```yaml
