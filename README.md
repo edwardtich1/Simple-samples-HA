@@ -16,5 +16,7 @@ https://github.com/edwardtich1/Simple-samples-HA/blob/main/tab_card.yaml
   
 ### mushroom-template-card
 https://github.com/edwardtich1/Simple-samples-HA/blob/main/custom%3Amushroom-template-card.yaml
+### Карта пример комната
+<image src="https://github.com/edwardtich1/Simple-samples-HA/blob/main/2023-12-22_17-39-06.png">
 
 
