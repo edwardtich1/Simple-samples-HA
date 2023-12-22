@@ -15,5 +15,6 @@ https://github.com/edwardtich1/Simple-samples-HA/blob/main/low_battery.yaml
 https://github.com/edwardtich1/Simple-samples-HA/blob/main/tab_card.yaml
   
 ### mushroom-template-card
+https://github.com/edwardtich1/Simple-samples-HA/blob/main/custom%3Amushroom-template-card.yaml
 
 
