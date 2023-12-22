@@ -1,0 +1,26 @@
+type: custom:mushroom-template-card
+icon: mdi:shower
+icon_color: cyan
+primary: |2
+   {{'💧'}}   Water
+secondary: |
+  {{ (states('sensor.termometr_kukhnia_temperature'))}}°C
+  {{ (states('sensor.termometr_kukhnia_humidity'))}} % 
+multiline_secondary: true
+layout: vertical
+card_mod:
+  style: |
+    ha-card {    
+      font-family: "Tahoma";
+      --card-primary-font-size: 14px;
+      --card-secondary-font-size: 12px;
+    }
+    mushroom-shape-icon$: |
+      ha-icon {
+       --icon-animation: rotation 1s linear infinite;
+      }
+      @keyframes rotation {
+        100% {
+          transform: rotate(360deg);
+        }
+      }
