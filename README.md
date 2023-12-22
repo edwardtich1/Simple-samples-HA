@@ -13,4 +13,7 @@ https://github.com/edwardtich1/Simple-samples-HA/blob/main/low_battery.yaml
 ### Карта со вкладками
 <image src="https://github.com/edwardtich1/Simple-samples-HA/blob/main/2023-12-06_10-47-07.png">
 https://github.com/edwardtich1/Simple-samples-HA/blob/main/tab_card.yaml
+  
+### mushroom-template-card
+
 
