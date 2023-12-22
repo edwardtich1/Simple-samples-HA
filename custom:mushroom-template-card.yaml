@@ -1,0 +1,5 @@
+        secondary: >-
+          {{ '{0:.0f}'.format(
+          (state_attr('sensor.termometr_kukhnia_temperature','temperature')|float))}}°C
+          | {{'{0:.0f}'.format((states('sensor.termometr_kukhnia_humidity')
+          |float))}}%
