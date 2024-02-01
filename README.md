@@ -24,4 +24,6 @@ https://github.com/edwardtich1/Simple-samples-HA/blob/main/room.yaml
 ### Карта пример
 <image src="https://github.com/edwardtich1/Simple-samples-HA/blob/main/2023-12-22_17-43-41.png">
 https://github.com/edwardtich1/Simple-samples-HA/blob/main/%7B%7B'%F0%9F%92%A7'%7D%7D%20%20%20Water.yaml
-
+  
+### Скрыть иконку по условию
+https://github.com/edwardtich1/Simple-samples-HA/blob/main/hide_icon.yaml
