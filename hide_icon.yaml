@@ -1,0 +1,16 @@
+      - type: template
+        icon: mdi:baseball
+        icon_color: red
+        show_state: true
+        card_mod:
+          style: |
+            ha-card {
+              margin-top: 0px;
+              margin-left: 0px;
+              z-index: 1;
+              background: none!important;
+              border: 0px !important;
+              {% if not is_state('sensor.iphone_fill_battery_state', 'Not Charging') %}
+                display: none !important;
+              {% endif %}
+            }
